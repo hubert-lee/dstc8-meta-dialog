@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  api:
+    image: idock.daumkakao.io/nlpteam/dstc8:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROXY_SERVER: ${PROXY_SERVER}
+    volumes:
+      - ./:/dstc8
+    ports:
+      - 9991:8989
+      - 9992:9000
+
