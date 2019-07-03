@@ -7,7 +7,7 @@ from pytext.metric_reporters import MetricReporter, channel as C
 from mldc.preprocessing.input_embedding import EmbedderInterface
 from tensorboardX import SummaryWriter
 from nltk.translate.bleu_score import corpus_bleu
-from runstats.fast import Statistics
+from runstats.core import Statistics
 
 
 LOG = logging.getLogger("mldc.metrics")

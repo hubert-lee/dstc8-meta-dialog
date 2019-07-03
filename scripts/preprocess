@@ -126,7 +126,9 @@ def make_fasttext_model(srczip, srcspm, destfp, members=[], dim=300):
         f.write(' '.join(token for token in pieces))
 
   logging.info('Training FastText model...')
-  fasttext.skipgram(text_for_fasttext, destfp, dim=dim)
+  #fasttext.skipgram(text_for_fasttext, destfp, dim=dim)
+  model = fasttext.train_unsupervised(text_for_fasttext, model='skipgram', dim=dim)
+  model.save_model(destfp)
 
   logging.info(f"Trained FastText model. See {destfp}.")
   os.remove(text_for_fasttext)

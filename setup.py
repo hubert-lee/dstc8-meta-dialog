@@ -3,7 +3,7 @@ from mldc import __version__
 
 
 INSTALL_REQUIRES = [
-  'torch==1.0',
+  'torch==1.1',
   'pydantic',
   'sentencepiece',
   'pytorch-pretrained-bert',
